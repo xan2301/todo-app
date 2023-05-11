@@ -16,6 +16,13 @@ public class TodoAppApplication implements RepositoryRestConfigurer {
     }
 
 
+    @Bean
+
+    Validator validator() {
+        return new LocalValidatorFactoryBean();
+    }
+
+
     @Override
     public void configureValidatingRepositoryEventListener(ValidatingRepositoryEventListener validatingListener) {
         RepositoryRestConfigurer.super.configureValidatingRepositoryEventListener(validatingListener);
@@ -24,9 +31,5 @@ public class TodoAppApplication implements RepositoryRestConfigurer {
         validatingListener.addValidator("beforeSave" , validator());
     }
 
-    @Bean
 
-    Validator validator() {
-        return new LocalValidatorFactoryBean();
-    }
 }

@@ -13,7 +13,7 @@ public class Task {
 
     private int id;
 
-    @NotBlank( message = "Task's description must be not null")
+    @NotBlank( message = "Task description must not be empty")
 
     private String description;
     private boolean done;
