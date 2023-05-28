@@ -29,7 +29,7 @@ public class TaskController {
 
     @GetMapping( "/tasks")
     ResponseEntity<?> readAllTasks(Pageable page){
-        logger.info("Custom pageable");
+        logger.info("Custom pageablee");
         return ResponseEntity.ok(repository.findAll(page));
     }
 
