@@ -23,13 +23,13 @@ public class TaskController {
 
     @GetMapping(value = "/tasks", params= {"!sort","!page","!size"})
     ResponseEntity<?> readAllTasks(){
-        logger.warn("Exposing all the tasks!!!");
+        logger.warn("Exposing all the tasks!!!!!");
         return ResponseEntity.ok(repository.findAll());
     }
 
     @GetMapping( "/tasks")
     ResponseEntity<?> readAllTasks(Pageable page){
-        logger.info("Custom pageablee");
+        logger.info("Custom pageable");
         return ResponseEntity.ok(repository.findAll(page));
     }
 
